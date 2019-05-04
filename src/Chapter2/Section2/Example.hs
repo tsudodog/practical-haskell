@@ -35,6 +35,12 @@ maxmin list = let h = head list
                             t_min = snd t
 
 data Client = GovOrg String
-            | Company String Integer String String
+            | Company String Integer Person String
             | Individual String String Bool
-            
+            deriving Show
+
+data Person = Person String String
+            deriving Show
+
+data Gender = Male | Female | Unknown
+            deriving Show
