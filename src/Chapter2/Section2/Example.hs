@@ -26,3 +26,15 @@ reverseList list = if (null list)
 --                    )
 
 maxmin list = let h = head list
+              in if null (tail list)
+              then (h, h)
+              else ( if h > t_max then h else t_max
+                      , if h < t_min then h else t_min) 
+                      where t = maxmin(tail list)
+                            t_max = fst t 
+                            t_min = snd t
+
+data Client = GovOrg String
+            | Company String Integer String String
+            | Individual String String Bool
+            
